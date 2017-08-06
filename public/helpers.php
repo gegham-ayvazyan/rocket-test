@@ -23,9 +23,10 @@ if (!function_exists('view')) {
     }
 }
 if (!function_exists('redirect')) {
-    function redirect($route) {
-        $host  = $_SERVER['HTTP_HOST'];
-        $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+    function redirect($route)
+    {
+        $host = $_SERVER['HTTP_HOST'];
+        $uri = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
         header("Location: http://$host$uri/?r=$route");
         exit();
     }
@@ -74,5 +75,24 @@ if (!function_exists('dd')) {
             echo "</pre></code>";
         }
         die();
+    }
+}
+
+if (!function_exists('str_random')) {
+    /**
+     * Generate a more truly "random" alpha-numeric string.
+     * Stolen from Laravel framework
+     * @param $length
+     * @return string
+     */
+    function str_random($length)
+    {
+        $string = '';
+        while (($len = strlen($string)) < $length) {
+            $size = $length - $len;
+            $bytes = random_bytes($size);
+            $string .= substr(str_replace(['/', '+', '='], '', base64_encode($bytes)), 0, $size);
+        }
+        return $string;
     }
 }
