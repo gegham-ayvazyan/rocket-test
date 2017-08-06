@@ -5,9 +5,11 @@ use RocketSled\Runnable;
 
 class Index implements Runnable
 {
-
     public function run()
     {
-        echo "Homepage";
+        $view = view('test');
+        $view->setValue('.who', 'John Doe');
+        echo $view;
+//        echo "Homepage";
     }
 }

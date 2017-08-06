@@ -4,6 +4,9 @@
 
 // ADD ADDITIONAL HOSTS TO THE $dirs ARRAY BELOW FOR VARIOUS DEPLOYMENT
 // ENVIRONMENTS
+
+require_once ('helpers.php');
+
 $dirs = [
     'DESKTOP-EIEETGL' => [
         'libs' => '../', // where any external libraries are installed
