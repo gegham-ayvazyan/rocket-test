@@ -40,32 +40,39 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Register</div>
                 <div class="panel-body">
+                    <div id="errors">
+                        <div class="alert alert-danger">
+                            <div class="error-message">
+                                <p>Error Shall Go Here (If Any)</p>
+                            </div>
+                        </div>
+                    </div>
                     <form class="form-horizontal" role="form" method="POST" >
                         <div class="form-group">
                             <label for="username" class="col-md-4 control-label">Username</label>
                             <div class="col-md-6">
-                                <input id="username" type="text" class="form-control" name="username" value="" required="" autofocus="" autocomplete="off">
+                                <input id="username" type="text" class="form-control" name="username" value="" autofocus="" autocomplete="off">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="email" class="col-md-4 control-label">Email</label>
                             <div class="col-md-6">
-                                <input id="email" type="text" class="form-control" name="email" value="" required="" autofocus="" autocomplete="off">
+                                <input id="email" type="text" class="form-control" name="email" value="" autofocus="" autocomplete="off">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="password" class="col-md-4 control-label">Password</label>
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required="" autocomplete="off">
+                                <input id="password" type="password" class="form-control" name="password" autocomplete="off">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="confirm_password" class="col-md-4 control-label">Confirm Password</label>
                             <div class="col-md-6">
-                                <input id="confirm_password" type="password" class="form-control" name="confirm_password" required="" autocomplete="off">
+                                <input id="confirm_password" type="password" class="form-control" name="confirm_password" autocomplete="off">
                             </div>
                         </div>
 
