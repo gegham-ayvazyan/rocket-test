@@ -40,6 +40,9 @@
                     $runnable_class = isset($_GET['r']) ? $_GET['r']:require_once('runnable.default.php');
             
                 //Make sure no-one's trying to haxor us by running a class that's not runnable
+
+                $runnable_class = 'Actions\\'. $runnable_class;
+
                 $refl = new ReflectionClass($runnable_class);
                 
                 if(!$refl->implementsInterface('RocketSled\\Runnable'))

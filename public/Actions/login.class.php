@@ -3,11 +3,11 @@ namespace Actions;
 
 use RocketSled\Runnable;
 
-class Index implements Runnable
+class Login implements Runnable
 {
     public function run()
     {
-        $view = view('index', 'RocketSled Test');
+        $view = view('login', 'RocketSled Test');
         echo $view;
     }
 }
