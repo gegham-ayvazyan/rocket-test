@@ -1,6 +1,4 @@
 <?php
-var_dump(php_uname('n'));die();
-
 require_once('config.php');
 //OVERRIDE THE DEFAULT AUTOLOAD TO PREVENT REPEATED
 //DIRECTORY SCANNING IN A PRODUCTION ENVIRONMENT

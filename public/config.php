@@ -15,6 +15,11 @@ $dirsConfig = require_once('config/dirs.php');
 /** Database Configurations */
 $dbConfig = require_once('config/db.php');
 
+if (!isset($dirsConfig[CURRENT_HOSTNAME])) {
+    echo "Unknown Hostname <strong>" . CURRENT_HOSTNAME . '</strong>';
+    exit();
+}
+
 require_once($dirsConfig[CURRENT_HOSTNAME]['rs'] . 'RocketSled/rocket_sled.class.php');
 
 include_once($dirsConfig[CURRENT_HOSTNAME]['rs'] . 'DataBank/data_bank.class.php');
