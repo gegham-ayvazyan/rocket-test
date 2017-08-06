@@ -16,6 +16,7 @@ class NewMessage implements Runnable
 
     public function run()
     {
+        $view = view('new_message', 'New Message');
         if (!empty($_POST)) {
             if (!$errors = $this->validate($_POST)) {
 
@@ -53,7 +54,25 @@ class NewMessage implements Runnable
                 redirect('Dashboard');
             }
         }
-        echo view('new_message', 'New Message');
+        if (!empty($errors)) {
+            if ($_POST['type']) {
+                $view->query("#option-".$_POST['type'])->item(0)->setAttribute('selected', 'selected');
+            }
+            if ($_POST['email']) {
+                $view->query("#email")->item(0)->setAttribute('value', $_POST['email']);
+            }
+            if ($_POST['message']) {
+                $view->query("#message")->item(0)->setAttribute('value', $_POST['message']);
+            }
+            $item = $view->repeat('.error-message');
+            foreach ($errors as $error) {
+                $item->setValue('p', $error);
+                $item->next();
+            }
+        } else {
+            $view->remove('#errors');
+        }
+        echo $view;
     }
 
     private function validate($data)

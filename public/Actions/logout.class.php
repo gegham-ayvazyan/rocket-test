@@ -1,16 +1,14 @@
 <?php
 namespace Actions;
 
-use Middleware\Auth;
 use RocketSled\Runnable;
 
 class Logout implements Runnable
 {
-    use Auth;
-
     public function run()
     {
         unset($_SESSION['uid']);
+        unset($_SESSION['admin']);
         session_destroy();
         redirect('Index');
     }
