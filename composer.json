@@ -1,0 +1,14 @@
+{
+    "name": "gegham/rocket-test",
+    "description": "This is a test project built on RocketSled framework",
+    "type": "project",
+    "license": "agpl-3.0",
+    "authors": [
+        {
+            "name": "Gegham Ayvazyan",
+            "email": "gegham.aivazyan@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
