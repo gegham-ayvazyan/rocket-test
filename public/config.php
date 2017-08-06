@@ -1,13 +1,6 @@
 <?php
 //REQUIRED CONFIG FILES
 
-if (!defined('CURRENT_HOSTNAME')) {
-    define('CURRENT_HOSTNAME', php_uname('n'));
-}
-if (!defined('DB_CONNECTION_NAME')) {
-    define('DB_CONNECTION_NAME', 'default');
-}
-
 /** Help Functions */
 require_once('helpers.php');
 /** Directories Configurations */
@@ -15,9 +8,15 @@ $dirsConfig = require_once('config/dirs.php');
 /** Database Configurations */
 $dbConfig = require_once('config/db.php');
 
-if (!isset($dirsConfig[CURRENT_HOSTNAME])) {
-    echo "Unknown Hostname <strong>" . CURRENT_HOSTNAME . '</strong>';
-    exit();
+if (!defined('CURRENT_HOSTNAME')) {
+    $hostName = php_uname('n');
+    if (!isset($dirsConfig[$hostName])) {
+        $hostName = 'default';
+    }
+    define('CURRENT_HOSTNAME', $hostName);
+}
+if (!defined('DB_CONNECTION_NAME')) {
+    define('DB_CONNECTION_NAME', 'default');
 }
 
 require_once($dirsConfig[CURRENT_HOSTNAME]['rs'] . 'RocketSled/rocket_sled.class.php');

@@ -6,4 +6,10 @@ return [
         'password' => '',
         'database' => 'test',
     ],
+    'default' => [
+        'host' => 'localhost',
+        'username' => 'root',
+        'password' => '',
+        'database' => 'test',
+    ],
 ];
