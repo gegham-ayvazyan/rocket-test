@@ -10,6 +10,6 @@ class Dashboard implements Runnable
 
     public function run()
     {
-        dd(get_user());
+        echo view('dashboard', 'My Messages');
     }
 }

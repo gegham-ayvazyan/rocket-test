@@ -38,6 +38,10 @@ if (!function_exists('logged_in')) {
 }
 
 if (!function_exists('get_user')) {
+    /**
+     * Returns the authenticated user or null if the client guest
+     * @return null|stdClass
+     */
     function get_user()
     {
         global $user;

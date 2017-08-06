@@ -1,0 +1,72 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Application</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/" id="app-name">APP Name</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/?r=Logout">
+                        Logout
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <p>
+                My Messages
+                <a href="?r=NewMessage" class="btn btn-success btn-sm pull-right">
+                    New Message
+                </a>
+            </p>
+        </div>
+        <div class="panel-body">
+
+            <table class="table table-condensed table-striped">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Message</th>
+                    <th>Type</th>
+                    <th>TO</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="message-row">
+                    <td>1</td>
+                    <td>Hello John. How Are You?</td>
+                    <td>Important</td>
+                    <td>johndoe@example.com</td>
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                    <th>ID</th>
+                    <th>Message</th>
+                    <th>Type</th>
+                    <th>TO</th>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+</body>
+</html>
