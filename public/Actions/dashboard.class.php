@@ -15,24 +15,23 @@ class Dashboard implements Runnable
             ->message
             ->sent_message
             ->receiver
-            ->select('*')
+            ->select('message_text, message_type, message_text, receiver_email, message_created_at')
             ->where('user_id = "' . $_SESSION['uid'] . '"')
+            ->orderBy('message_created_at DESC')
             ->run();
         $node = $view->repeat('.message-row');
+        $empty = true;
         while ($message = $data->nextRow())
         {
-//            var_dump($message);
-//            dd($message);
-            $node->setValue('.message-id', $message['message_id']);
+            $empty = false;
             $node->setValue('.message-text', $message['message_text']);
             $node->setValue('.message-type', $message['message_type']);
-            $node->setValue('.message-receiver', $message['message_text']);
+            $node->setValue('.message-receiver', $message['receiver_email']);
+            $date = \DateTime::createFromFormat('Y-m-d H:i:s', $message['message_created_at'])->format('F j, Y \a\t g:ia');
+            $node->setValue('.message-time', $date);
             $node->next();
         }
-//        foreach ($data as $item) {
-//            dd(213);
-//            echo $item->message_text;
-//        }
+        $view->remove($empty ? '.message-row' : '.no-messages');
         echo $view;
     }
 }
