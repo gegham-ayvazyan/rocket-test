@@ -1,13 +1,25 @@
 <?php
-    //REQUIRED CONFIG FILES
-    require_once('dirs.php');
-    require_once($dirs[$current_hostname]['rs'].'RocketSled/rocket_sled.class.php');
-    
-    //IF YOU HAVE ANY AUTOLOADS TO INCLUDE THAT AREN'T AUTOMATICALLY COVERED
-    //BY RocketSled OR NEED TO BE PERFORMED BEFORE RocketSled REGISTERS
-    //NB: USING include_once HERE SO WE CAN USE THE SAME CONFIG FILE WHEN
-    //    RUNNING install.php
-    include_once($dirs[$current_hostname]['rs'].'DataBank/data_bank.class.php');
+//REQUIRED CONFIG FILES
 
-    //TELL THE RocketSled AUTOLOADER WHERE TO LOOK FOR STUFF
-    RocketSled::scan($dirs[$current_hostname]);
+if (!defined('CURRENT_HOSTNAME')) {
+    define('CURRENT_HOSTNAME', php_uname('n'));
+}
+if (!defined('DB_CONNECTION_NAME')) {
+    define('DB_CONNECTION_NAME', 'default');
+}
+
+/** Help Functions */
+require_once('helpers.php');
+/** Directories Configurations */
+$dirsConfig = require_once('config/dirs.php');
+/** Database Configurations */
+$dbConfig = require_once('config/db.php');
+
+require_once($dirsConfig[CURRENT_HOSTNAME]['rs'] . 'RocketSled/rocket_sled.class.php');
+
+include_once($dirsConfig[CURRENT_HOSTNAME]['rs'] . 'DataBank/data_bank.class.php');
+
+RocketSled::scan($dirsConfig[CURRENT_HOSTNAME]);
+
+Plusql::credentials(DB_CONNECTION_NAME, $dbConfig[CURRENT_HOSTNAME]);
+$dbConnection = DB_CONNECTION_NAME;
