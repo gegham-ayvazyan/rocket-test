@@ -11,6 +11,8 @@ trait Guest
     {
         if (logged_in()) {
             return redirect('Dashboard');
+        } else if (is_admin()) {
+            return redirect('AdminDashboard');
         }
     }
 }

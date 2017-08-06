@@ -1,0 +1,60 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Application</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .title {
+            font-size: 48px;
+        }
+    </style>
+</head>
+<body>
+<div class="flex-center position-ref full-height">
+    <div class="content">
+        <div class="title m-b-md">
+            <form method="post" id="default">
+                <p>
+                    There is only one god and his name is
+                    <select title="Select a god" name="god-name" id="god-name">
+                        <option></option>
+                        <option>Warrior</option>
+                        <option>Death</option>
+                        <option>Old Gods</option>
+                        <option>Great Stallion</option>
+                        <option>Lord of Light</option>
+                    </select>
+                </p>
+                <p>
+                    And there is only one thing we say to him:
+                    <select name="what-we-say" id="what-we-say" title="What we say to him">
+                        <option></option>
+                        <option>Valar Morghulis</option>
+                        <option>Not Today</option>
+                        <option>NO!</option>
+                        <option>Please Don't</option>
+                        <option>Valar Dohaeris</option>
+                    </select>
+                </p>
+                <input type="submit" class="btn btn-success btn-lg">
+            </form>
+            <div id="fail">
+                You have not watched Game of Thrones ? <br>
+                Watch
+                <a href="https://youtu.be/NTDPl2Ey7Jw?t=1m30s" target="_blank">
+                    this
+                </a>
+                scene and you will be able to login ;)
+                <p>
+                    <a href="" class="btn btn-primary btn-lg">Go Back</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
