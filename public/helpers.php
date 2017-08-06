@@ -1,6 +1,6 @@
 <?php
 if (!function_exists('view')) {
-    function view($view_name)
+    function view($view_name, $title = null)
     {
         if (!strstr($view_name, '.html')) {
             $view_name .= '.html';
@@ -9,7 +9,12 @@ if (!function_exists('view')) {
         $view = $viewsDir . DIRECTORY_SEPARATOR . $view_name;
         if (file_exists($view)) {
             require_once '../DOMTemplate/domtemplate.php';
-            return new DOMTemplate(file_get_contents($view));
+            $template = new DOMTemplate(file_get_contents($view));
+            if ($title) {
+                $template->setValue('#app-name', $title);
+                $template->setValue('title', $title);
+            }
+            return $template;
         }
         throw new Exception('View not found: ' . $viewsDir);
     }
