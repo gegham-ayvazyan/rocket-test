@@ -9,6 +9,7 @@ $dirs = [
         'libs' => '../', // where any external libraries are installed
         'rs' => '../', // where the RocketSled package is installed
         'userland' => '../', // where my application packages are installed
+        'Actions' => './'
     ],
 ];
 

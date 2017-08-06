@@ -56,11 +56,11 @@
             {
                 $ret = FALSE;
                 $namespaced = explode('\\',$class);
-                
+
                 if(count($namespaced) > 1)
                 {
                     $class_part = strtolower(preg_replace('/^_/','',preg_replace('/([A-Z])/','_\1',array_pop($namespaced)))).'.class.php';
-                    
+
                     foreach(RocketSled::scan() as $dir)
                     {
                         $fname = $dir.'/'.implode('/',$namespaced).'/'.$class_part;

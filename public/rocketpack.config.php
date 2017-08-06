@@ -5,5 +5,6 @@
         RocketPack\Dependency::into($dirs[$current_hostname]['rs'])
         ->add('https://github.com/iaindooley/DataBank')
         ->add('https://github.com/iaindooley/Murphy')
+        ->add('https://github.com/Kroc/DOMTemplate')
         ;
     });
