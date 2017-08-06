@@ -90,7 +90,7 @@ if (!function_exists('str_random')) {
         $string = '';
         while (($len = strlen($string)) < $length) {
             $size = $length - $len;
-            $bytes = random_bytes($size);
+            $bytes = openssl_random_pseudo_bytes($size);
             $string .= substr(str_replace(['/', '+', '='], '', base64_encode($bytes)), 0, $size);
         }
         return $string;
