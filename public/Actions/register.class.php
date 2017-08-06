@@ -3,14 +3,14 @@ namespace Actions;
 
 use RocketSled\Runnable;
 
-class Login implements Runnable
+class Register implements Runnable
 {
     public function run()
     {
         if (!empty($_POST)) {
             var_dump($_POST);
         } else {
-            $view = view('login', 'Login');
+            $view = view('register', 'Sign Up');
             echo $view;
         }
     }

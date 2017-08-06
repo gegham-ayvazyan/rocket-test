@@ -7,7 +7,7 @@ class Index implements Runnable
 {
     public function run()
     {
-        $view = view('index', 'RocketSled Test');
+        $view = view('index');
         echo $view;
     }
 }

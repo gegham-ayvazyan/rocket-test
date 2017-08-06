@@ -18,6 +18,9 @@ if (!defined('CURRENT_HOSTNAME')) {
 if (!defined('DB_CONNECTION_NAME')) {
     define('DB_CONNECTION_NAME', 'default');
 }
+if (!defined('APP_NAME')) {
+    define('APP_NAME', 'RocketSled Test');
+}
 
 require_once($dirsConfig[CURRENT_HOSTNAME]['rs'] . 'RocketSled/rocket_sled.class.php');
 

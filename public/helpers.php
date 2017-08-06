@@ -10,10 +10,12 @@ if (!function_exists('view')) {
         if (file_exists($view)) {
             require_once '../DOMTemplate/domtemplate.php';
             $template = new DOMTemplate(file_get_contents($view));
+            $appName = APP_NAME;
+            $template->setValue('#app-name', $appName);
             if ($title) {
-                $template->setValue('#app-name', $title);
-                $template->setValue('title', $title);
+                $title = $appName . ' | ' . $title;
             }
+            $template->setValue('title', $title);
             return $template;
         }
         throw new Exception('View not found: ' . $viewsDir);
