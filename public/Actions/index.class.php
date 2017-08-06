@@ -8,6 +8,9 @@ class Index implements Runnable
     public function run()
     {
         $view = view('index');
+        if (logged_in() || is_admin()) {
+            $view->remove('#login-link');
+        }
         echo $view;
     }
 }
