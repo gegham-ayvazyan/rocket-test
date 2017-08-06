@@ -1,10 +1,13 @@
 <?php
 namespace Actions;
 
+use Middleware\Admin;
 use RocketSled\Runnable;
 
 class AdminDashboard implements Runnable
 {
+    use Admin;
+
     public function run()
     {
         $view = view('admin-dashboard', 'Users');
